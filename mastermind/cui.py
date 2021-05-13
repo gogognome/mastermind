@@ -31,6 +31,12 @@ def print_computer_guess(game: Game) -> Sequence:
     return guess
 
 
+def get_human_guess(_: Game) -> Sequence:
+    return input()
+
+
 if __name__ == "__main__":
-    # play_game(lambda game: input())
-    play_game(print_computer_guess)
+    # Select human or computer as guess producer.
+    # guess_producer = get_human_guess
+    guess_producer = print_computer_guess
+    play_game(guess_producer)
